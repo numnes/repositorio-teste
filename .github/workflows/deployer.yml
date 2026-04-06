@@ -30,7 +30,8 @@ jobs:
             echo "Defina a variável DEPLOYER_PROJECT_SLUG."
             exit 1
           fi
-          BRANCH="${{ github.head_ref }}"
+          #BRANCH="${{ github.head_ref }}"
+          BRANCH="${{ github.ref_name }}"
           curl -fsS -X POST "${DEPLOYER_API_URL%/}/deploy" \
             -H "Content-Type: application/json" \
             -H "X-Deployer-Api-Key: ${DEPLOYER_API_KEY}" \
@@ -54,7 +55,8 @@ jobs:
             echo "Defina a variável DEPLOYER_PROJECT_SLUG."
             exit 1
           fi
-          BRANCH="${{ github.head_ref }}"
+          #BRANCH="${{ github.head_ref }}"
+          BRANCH="${{ github.ref_name }}"
           curl -fsS -X POST "${DEPLOYER_API_URL%/}/deploy/destroy" \
             -H "Content-Type: application/json" \
             -H "X-Deployer-Api-Key: ${DEPLOYER_API_KEY}" \
