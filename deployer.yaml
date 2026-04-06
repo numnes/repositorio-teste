@@ -3,8 +3,8 @@
 runner: pm2
 
 build:
-  - npm ci
-  - npm run build
+  - pnpm install
+  - pnpm run build
 
 # Caminho relativo à raiz do repositório para o pm2 start.
 target: dist/main.js
