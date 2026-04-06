@@ -20,7 +20,7 @@ jobs:
         env:
           DEPLOYER_API_URL: ${{ secrets.DEPLOYER_API_URL }}
           DEPLOYER_API_KEY: ${{ secrets.DEPLOYER_API_KEY }}
-          PROJECT_SLUG: ${{ vars.DEPLOYER_PROJECT_SLUG }}
+          PROJECT_SLUG: ${{ secrets.DEPLOYER_PROJECT_SLUG }}
         run: |
           if [ -z "$DEPLOYER_API_URL" ] || [ -z "$DEPLOYER_API_KEY" ]; then
             echo "Defina os secrets DEPLOYER_API_URL e DEPLOYER_API_KEY."
