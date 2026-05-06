@@ -8,6 +8,7 @@ on:
     branches:
       - master
       - homologation
+      - 'test-*'
 
   workflow_dispatch:
 
