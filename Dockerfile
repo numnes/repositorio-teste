@@ -3,7 +3,7 @@ FROM node:latest
 WORKDIR /usr/src/app
 RUN apt-get update && apt-get upgrade -y
 COPY package*.json ./
-COPY .env ./
+# COPY .env ./
 COPY tsconfig.json ./
 RUN npm install
 COPY . .
