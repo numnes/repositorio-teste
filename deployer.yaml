@@ -1,10 +1,9 @@
-# Coloque na raiz do repositório da aplicação
-# runner: apenas "pm2" é suportado por enquanto.
-runner: pm2
+# Runner Docker — imagem construída na máquina root (sem registry externo).
+runner: docker
 
-build:
-  - pnpm install
-  - pnpm run build
-
-# Caminho relativo à raiz do repositório para o pm2 start.
-target: dist/main.js
+docker:
+  build: local
+  dockerfile: Dockerfile
+  context: .
+  port: 3000
+  imageName: app
